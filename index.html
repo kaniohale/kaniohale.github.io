@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Shirt Pattern Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>3D Shirt Pattern Maker</h1>
+        <div class="viewer-container">
+            <div id="shirt-viewer"></div>
+            <div class="controls">
+                <div class="camera-controls">
+                    <h2>Camera View</h2>
+                    <div class="camera-buttons">
+                        <button id="viewFront">Front</button>
+                        <button id="viewBack">Back</button>
+                        <button id="viewLeft">Left</button>
+                        <button id="viewRight">Right</button>
+                        <button id="viewTop">Top</button>
+                        <button id="viewBottom">Bottom</button>
+                    </div>
+                    <button id="resetCameraBtn" class="reset-camera">Reset View</button>
+                </div>
+                <div class="upload-section">
+                    <h2>Upload Pattern</h2>
+                    <input type="file" id="patternUpload" accept="image/*">
+                </div>
+                <div class="upload-section">
+                    <h2>Upload HDRI Lighting</h2>
+                    <input type="file" id="hdriUpload" accept=".hdr">
+                    <div class="hdri-controls">
+                        <h3>HDRI Brightness</h3>
+                        <input type="range" id="hdriIntensitySlider" min="0" max="200" value="100">
+                        <span id="hdriIntensityValue">100%</span>
+                    </div>
+                    <button id="resetLightingBtn">Reset Lighting</button>
+                </div>
+                <div class="overlay-control">
+                    <h2>Material Shininess</h2>
+                    <input type="range" id="shininessSlider" min="0" max="100" value="30">
+                    <span id="shininessValue">30%</span>
+                </div>
+                <div class="export-section">
+                    <h2>Export Options</h2>
+                    <select id="bgOption">
+                        <option value="white">White Background</option>
+                        <option value="black">Black Background</option>
+                        <option value="transparent">Transparent Background</option>
+                    </select>
+                    <button id="downloadBtn">Take Screenshot</button>
+                </div>
+                <div class="buttons">
+                    <button id="resetBtn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html> 
